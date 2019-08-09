@@ -1,21 +1,66 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- The content below is only a placeholder and can be replaced.-->
+<!-- <html lang="en">
 
-<router-outlet></router-outlet>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Login</title>
+</head>
+
+<body>
+  <form #loginform="ngForm" (ngSubmit)="login(loginform)" id="body">
+
+    <div class="login-wra">
+         <div class="login-html">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up">
+        <label  class="tab">Sing Up</label>
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <div class="group">
+              <label for="user" class="label">Phonenumber</label>
+              <input type="text" class="input" name="phonenumber" placeholder="Phonenumber" ngModel
+                #phonenumber  =  "ngModel">
+            </div>
+            <div class="group">
+              <label for="pass" class="label">Password</label>
+              <input type="password" class="input" name="password" placeholder="Password" ngModel #password = "ngModel">
+            </div>
+
+            <div class="group">
+              <input type="submit" class="button" value="Sign In">
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <label for="tab-2">Forgot Password ?</label>
+            </div>
+          </div>
+
+          <div class="sign-up-htm">
+            <div class="group">
+              <label for="pass" class="label">Email Address</label>
+              <input id="pass" type="text" class="input">
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="Reset Password">
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <label for="tab-1">Sign In</label>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </form>
+</body>
+
+</html>  -->
+
+
+
+<router-outlet></router-outlet> 

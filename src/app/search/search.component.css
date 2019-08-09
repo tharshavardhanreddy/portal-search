@@ -1,0 +1,12 @@
+.body{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    margin: auto;
+    
+}
+
+.form-inline{
+    margin-top: 3%;
+    margin-left: 4%;
+}
