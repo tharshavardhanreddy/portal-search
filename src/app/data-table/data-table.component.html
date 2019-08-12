@@ -1,6 +1,7 @@
+<div class="body">
 
-<mat-form-field>
-  <input (keyup)="applyFilter($event.target.value)" matInput placeholder="filter">
+<mat-form-field appearance="fill">
+  <input (keyup)="applyFilter($event.target.value)" type="text" matInput placeholder= "search">
 </mat-form-field>
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
@@ -23,9 +24,9 @@
   <mat-paginator #paginator
       [length]="dataSource?.data.length"
       [pageIndex]="0"
-      [pageSize]="50"
-      [pageSizeOptions]="[25, 50, 100, 250]">
+      [pageSize]="10"
+      [pageSizeOptions]="[5,10,15,25, 50, 100, 250]">
   </mat-paginator>
 </div>
-
+</div>
 <router-outlet></router-outlet>
