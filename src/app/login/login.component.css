@@ -2,15 +2,23 @@
  body {
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
+    background-image: url("https://www.calmaldental.com.my/wp-content/uploads/2016/04/bg-lightblue.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -moz-background-size: cover;
+    background-attachment: absolute;
+    opacity: 1;
     height: 100vh;
   }
   #login .container #login-row #login-column #login-box {
     margin-top: 120px;
     max-width: 600px;
-    height: 320px;
-    border: 1px solid #9C9C9C;
-    background-image: linear-gradient(135deg, #fbfdfb 0%, #83ec75 100%);
+    height: 350px;
+    /* border: 1px solid #9C9C9C; */
+    /* background-image: linear-gradient(135deg, #fbfdfb 0%, #cfebf1 100%); */
   }
   #login .container #login-row #login-column #login-box #login-form {
     padding: 20px;
@@ -18,6 +26,32 @@
   #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
   }
+
+
+ h3{
+padding-bottom: 5%;
+ }
+
+ .text-info2{
+     padding-top:5%;
+ }
+
+ /* input{
+     border: 0.5px;
+     
+     border-bottom: 1px solid black;
+     
+ } */
+
+ 
+
+ 
+
+
+
+
+
+
  
  
  

@@ -1,5 +1,19 @@
+.body{
+  margin: auto;
+  padding:3% 0;
+  background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/blur-abstract-background-5.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -moz-background-size: cover;
+  background-attachment: absolute;
+}
+
+
 .full-width-table {
-  width: 100%;
+  width: 80%;
   
 }
 
@@ -12,22 +26,18 @@
   color: #0A0A0A;
 }
 
-md-pagination-wrapper {
+mat-pagination-wrapper {
   width:auto !important;
 }
 
-md-row:nth-child(even){
-background-color:rgb(50, 112, 173);
-}
-
-md-row:nth-child(odd){
+mat-row{
 background-color:rgb(66, 66, 64);
 }
 
 /* <--body--> */
-.body{
+.content{
   margin: 2% ;
-  margin-left:16%;
+  margin-left:25%;
   width: 60%;
 }
 
@@ -35,6 +45,6 @@ background-color:rgb(66, 66, 64);
   display: none;
 }
 .mat-form-field{
-  background-color: rgba(167, 160, 160, 0.25);
-  width:auto;
+  background-color: rgba(236, 229, 229, 0.25);
+  width:80%;
 }
