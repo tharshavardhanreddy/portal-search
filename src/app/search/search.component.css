@@ -1,12 +1,33 @@
-.body{
-    width: 100%;
-    min-height: 100vh;
-    height: auto;
-    margin: auto;
-    
+ 
+ 
+ .full-width-table {
+  width: 100%;
+  height: auto;
+  
+ }  
+
+ .mat-form-field {
+  font-size: 14px;
+  width: 100%;
 }
 
-.form-inline{
-    margin-top: 3%;
-    margin-left: 4%;
+td, th {
+  width: 25%;
 }
+
+ .table{
+   margin-top: 2%;
+   width: 70%;
+   margin-left: 12%;
+   height: auto;
+   border: 1px solid rgb(132, 157, 173);
+   border-radius: 4%;
+ }
+
+ tr{
+   background-color: white;
+ }
+
+ th{
+   height: 0px;
+ }

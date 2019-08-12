@@ -1,16 +1,39 @@
-<div class="body">
-<form class="form-inline md-form mr-auto mb-4">
-    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Skills" aria-label="Search">
-    <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
-  </form>
+<div class="table">
+    <!-- <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field> -->
+    
+<div class="mat-elevation-z8 ">
+
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell ng-if="$odd" style="background-color:#f1f1f1" *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell ng-if="$even" *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <!-- Name exp -->
+    <ng-container matColumnDef="exp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>exp</th>
+      <td mat-cell ng-if="$odd" style="background-color:#f1f1f1" *matCellDef="let row">{{row.exp}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5,10,20]">
+  </mat-paginator>
 </div>
-
-
-<!-- <form class="form-inline md-form form-sm active-pink active-pink-2">
-  <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
-  <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"
-    mdbInput>
-</form> -->
-
-
+</div>
 <router-outlet></router-outlet>
