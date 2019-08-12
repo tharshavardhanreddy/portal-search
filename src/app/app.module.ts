@@ -10,12 +10,14 @@ import {FormsModule} from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import {HttpModule} from '@angular/http';
-import { SearchComponent } from './search/search.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { DataTableComponent } from './data-table/data-table.component';
 
 
 
@@ -25,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    SearchComponent
+    DataTableComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -36,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MDBBootstrapModule,
     MatTableModule,
+    MatInputModule,
     MatPaginatorModule,
     MatSortModule
   ],
