@@ -7,32 +7,35 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // TODO: Replace this with your own data model type
 export interface DataTableItem {
   name: string;
-  id: number;
-  exp: number;
+  designation: string;
+  experience: number;
+  vacancy: number;
+  location: string;
+  // details: any;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: DataTableItem[] = [
-  {id: 1, name: 'Hydrogen', exp: 2},
-  {id: 2, name: 'Helium', exp: 2},
-  {id: 3, name: 'Lithium', exp: 2},
-  {id: 4, name: 'Beryllium', exp: 2},
-  {id: 5, name: 'Boron', exp: 2},
-  {id: 6, name: 'Carbon', exp: 2},
-  {id: 7, name: 'Nitrogen', exp: 2},
-  {id: 8, name: 'Oxygen', exp: 2},
-  {id: 9, name: 'Fluorine', exp: 2},
-  {id: 10, name: 'Neon', exp: 2},
-  {id: 11, name: 'Sodium', exp: 2},
-  {id: 12, name: 'Magnesium', exp: 2},
-  {id: 13, name: 'Aluminum', exp: 2},
-  {id: 14, name: 'Silicon', exp: 2},
-  {id: 15, name: 'Phosphorus', exp: 2},
-  {id: 16, name: 'Sulfur', exp: 2},
-  {id: 17, name: 'Chlorine', exp: 2},
-  {id: 18, name: 'Argon', exp: 2},
-  {id: 19, name: 'Potassium', exp: 2},
-  {id: 20, name: 'Calcium', exp: 2},
+  // {id: 1, name: 'Hydrogen', exp: 2},
+  // {id: 2, name: 'Helium', exp: 2},
+  // {id: 3, name: 'Lithium', exp: 2},
+  // {id: 4, name: 'Beryllium', exp: 2},
+  // {id: 5, name: 'Boron', exp: 2},
+  // {id: 6, name: 'Carbon', exp: 2},
+  // {id: 7, name: 'Nitrogen', exp: 2},
+  // {id: 8, name: 'Oxygen', exp: 2},
+  // {id: 9, name: 'Fluorine', exp: 2},
+  // {id: 10, name: 'Neon', exp: 2},
+  // {id: 11, name: 'Sodium', exp: 2},
+  // {id: 12, name: 'Magnesium', exp: 2},
+  // {id: 13, name: 'Aluminum', exp: 2},
+  // {id: 14, name: 'Silicon', exp: 2},
+  // {id: 15, name: 'Phosphorus', exp: 2},
+  // {id: 16, name: 'Sulfur', exp: 2},
+  // {id: 17, name: 'Chlorine', exp: 2},
+  // {id: 18, name: 'Argon', exp: 2},
+  // {id: 19, name: 'Potassium', exp: 2},
+  // {id: 20, name: 'Calcium', exp: 2},
 ];
 
 /**
@@ -96,7 +99,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'experience': return compare(+a.experience, +b.experience, isAsc);
         default: return 0;
       }
     });
