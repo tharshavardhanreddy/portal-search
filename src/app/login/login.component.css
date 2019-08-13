@@ -36,13 +36,23 @@ padding-bottom: 5%;
      padding-top:5%;
  }
 
- /* input{
-     border: 0.5px;
-     
-     border-bottom: 1px solid black;
-     
- } */
+ input{
+     border: 1px solid;
+     border-radius: 150px;
+     /* border-bottom: 1px solid black; */
+ }
 
+ .btn{
+     
+     margin-left: 30%;
+   align-content: center;
+   width: 40%;
+ }
+
+ 
+
+ 
+ 
  
 
  
