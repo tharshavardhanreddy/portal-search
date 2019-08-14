@@ -29,6 +29,7 @@
     "angular-material-pagination": "^1.0.2",
     "material-icons": "^0.3.1",
     "mdbootstrap": "^4.8.7",
+    "ngx-chips": "^2.0.2",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.2",
     "tslib": "^1.9.0",

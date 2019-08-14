@@ -1,0 +1,74 @@
+<body>
+
+  <form #mycompanyForm="ngForm">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h3> Company requriment</h3>
+
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <label>Name of the company
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{companyname}}>
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>Authorized person Email
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{email}}  >
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>Authorized person Phone Number
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{mobilenumber}} >
+            </label>
+          </div>
+
+
+          <div class="w3-half">
+            <label>Required Designation
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{designation}} >
+            </label>
+          </div>
+
+
+
+          <div class="w3-half">
+            <label>Job Location
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{location}} >
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>Experience required in months
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" placeholder="Months" value= {{experience}} >
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>Number Of Vacancies
+              <input class="w3-input w3-animate-input" style="width:200px" type="number" placeholder="in number" value= {{vacancies}} >
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>Skills looking for
+                <tag-input [ngModel]="skills" name="skills"   [removable]='false' [disable]='true' > </tag-input>
+              <!-- <input class="w3-input w3-animate-input" style="width:200px" type="number" placeholder="skills"  > -->
+            </label>
+          </div>
+
+          <!-- <input type="submit" class="button expanded" value="Submit Form"  > -->
+        </div>
+
+
+
+
+      </div>
+    </div>
+    
+
+
+  </form>
+</body>
