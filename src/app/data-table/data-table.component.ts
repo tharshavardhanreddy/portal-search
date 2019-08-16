@@ -22,33 +22,6 @@ export interface DataTableItem {
 }
 
 
-
-// const EXAMPLE_DATA: DataTableItem[] = [
-  // {id: 1, name: 'Hydrogen', exp: 2},
-  // {id: 2, name: 'Helium', exp: 2},
-  // {id: 3, name: 'Lithium', exp: 2},
-  // {id: 4, name: 'Beryllium', exp: 2},
-  // {id: 5, name: 'Boron', exp: 2},
-  // {id: 6, name: 'Carbon', exp: 2},
-  // {id: 7, name: 'Nitrogen', exp: 2},
-  // {id: 8, name: 'Oxygen', exp: 2},
-  // {id: 9, name: 'Fluorine', exp: 2},
-  // {id: 10, name: 'Neon', exp: 2},
-  // {id: 11, name: 'Sodium', exp: 2},
-  // {id: 12, name: 'Magnesium', exp: 2},
-  // {id: 13, name: 'Aluminum', exp: 2},
-  // {id: 14, name: 'Silicon', exp: 2},
-  // {id: 15, name: 'Phosphorus', exp: 2},
-  // {id: 16, name: 'Sulfur', exp: 2},
-  // {id: 17, name: 'Chlorine', exp: 2},
-  // {id: 18, name: 'Argon', exp: 2},
-  // {id: 19, name: 'Potassium', exp: 2},
-  // {id: 20, name: 'Calcium', exp: 2},
-   // ];
-
-
-
-
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
@@ -80,17 +53,6 @@ dataSource: any;
 
   }
 
-  // model(data) {
-  //   console.log(data);
-  //   // this.service.populateForm(row);
-  //   // const dialogConfig = new MatDialogConfig();
-  //   // dialogConfig.disableClose = true;
-  //   // dialogConfig.autoFocus = true;
-  //   // // tslint:disable-next-line:quotemark
-  //   // dialogConfig.width = "60%";
-  //   // this.dialog.open(DataTableComponent, dialogConfig);
-  // }
-
 
    model(data): void {
     const dialogRef = this.dialog.open(CompanymodelComponent, {
@@ -105,15 +67,10 @@ dataSource: any;
   }
 
   ngOnInit() {
-    // this.dataSource = new DataTableDataSource();
-  //  this. dataSource = new MatTableDataSource();
 
   }
 
    ngAfterViewInit() {
-  //   this.dataSource.sort = this.sort;
-  //   this.dataSource.paginator = this.paginator;
-  //   this.table.dataSource = this.dataSource;
    }
 
   applyFilter(filtervalue: string) {
