@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataTableComponent } from './data-table/data-table.component';
 import { CompanymodelComponent } from './companymodel/companymodel.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { CandidateTableComponent } from './candidate-table/candidate-table.component';
 
 
 
@@ -36,6 +37,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     LoginComponent,
     DataTableComponent,
     CompanymodelComponent,
+    CandidateTableComponent,
   ],
   imports: [
     MatDialogModule,

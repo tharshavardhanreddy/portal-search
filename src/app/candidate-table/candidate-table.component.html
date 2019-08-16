@@ -1,0 +1,82 @@
+<div class="body">
+    <div class="content">
+  
+      <mat-form-field appearance="fill">
+        <input (keyup)="applyFilter($event.target.value)" type="text" matInput placeholder="search">
+      </mat-form-field>
+      <div class="mat-elevation-z8">
+        <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="dataSource">
+          <!-- Id Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>name</th>
+          
+            <td mat-cell  *matCellDef="let row " >{{row.name}}</td>
+          
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          
+            <td mat-cell  *matCellDef="let row " >{{row.email}}</td>
+          
+          </ng-container>
+
+          <ng-container matColumnDef="phonenumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</th>
+          
+            <td mat-cell  *matCellDef="let row " >{{row.phonenumber}}</td>
+          
+          </ng-container>
+  
+         
+          <ng-container matColumnDef="designation">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Current Role</th>
+         
+            <td mat-cell *matCellDef="let row">{{row.designation}}</td>
+      
+          </ng-container>
+  
+          <ng-container matColumnDef="experience">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>experience</th>
+           
+              <td mat-cell *matCellDef="let row">{{row.experience}}</td>
+        
+            </ng-container>
+  
+            <ng-container matColumnDef="city">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Current location</th>
+            
+              <td mat-cell *matCellDef="let row" >{{row.city}}</td>
+           
+            </ng-container>
+  
+            <ng-container matColumnDef="skills">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>skills</th>
+             
+              <td mat-cell *matCellDef="let row">{{row.skills}}</td>
+           
+            </ng-container>
+            <!-- <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+           
+                <td mat-cell *matCellDef="let row">   <button mat-icon-button (click)="model(row)"> <mat-icon>description</mat-icon></button></td>
+             
+              </ng-container> -->
+  
+  
+  
+           
+            
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  
+        <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="8"
+          [pageSizeOptions]="[5,8,15,25]">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
