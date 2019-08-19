@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {CompanyskillsService} from '../companyskills.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-companymodel',
@@ -17,11 +19,12 @@ export class CompanymodelComponent implements OnInit {
   vacancies: number;
   skills = [];
 
-  constructor(dialogRef: MatDialogRef<CompanymodelComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  constructor(public dialogRef: MatDialogRef<CompanymodelComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any, public roter: Router, public companyservice: CompanyskillsService) { }
 
   ngOnInit() {
-    var looper = 0
+    let looper = 0;
     console.log(this.data.datakey);
     this.companyname = this.data.datakey.name;
     this.email = this.data.datakey.email;
@@ -37,7 +40,14 @@ export class CompanymodelComponent implements OnInit {
       looper++;
 
     }
+  }
+
+  ctable() {
+    this.companyservice.setskills(this.skills);
+    this.dialogRef.close();
+    this.roter.navigate(['/candidate-table']);
 
   }
+
 
 }

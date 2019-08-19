@@ -18,12 +18,13 @@ import { MatSortModule } from '@angular/material/sort';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MatDialog, MatDialogConfig } from '@angular/material';
 // import {MatDialogModule} from '@angular/material/dialog';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { DataTableComponent } from './data-table/data-table.component';
 import { CompanymodelComponent } from './companymodel/companymodel.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CandidateTableComponent } from './candidate-table/candidate-table.component';
-
+import {CompanyskillsService} from './companyskills.service';
 
 
 
@@ -42,6 +43,7 @@ import { CandidateTableComponent } from './candidate-table/candidate-table.compo
   imports: [
     MatDialogModule,
     MatGridListModule,
+    MatChipsModule,
     // MatDialog,
     // MatDialogConfig,
     BrowserAnimationsModule,
@@ -61,7 +63,7 @@ import { CandidateTableComponent } from './candidate-table/candidate-table.compo
   entryComponents: [
    CompanymodelComponent
   ],
-  providers: [],
+  providers: [CompanyskillsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
