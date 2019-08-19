@@ -12,6 +12,14 @@
   height: auto;
 }
 
+td{
+  text-transform: uppercase;
+}
+
+th{
+  text-transform: uppercase;
+
+}
 
 .full-width-table {
   width: 100%;
