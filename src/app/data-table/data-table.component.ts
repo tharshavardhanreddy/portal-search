@@ -10,15 +10,17 @@ import {Http, Headers} from '@angular/http';
 // import { MatDialogConfig } from '@angular/material';
 import 'rxjs/add/operator/map';
 import { CompanymodelComponent } from '../companymodel/companymodel.component';
+import {ip} from '../../config/url';
 
 
 
 export interface DataTableItem {
-  name: string;
-  designation: string;
-  experience: number;
-  vacancy: number;
-  location: string;
+  Companyname: string;
+  Designation: string;
+  Experienceinyears: number;
+  Experienceinmonths: number;
+  Vacancy: number;
+  Location: string;
   // actions: any;
 }
 
@@ -34,15 +36,17 @@ export class DataTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable, {static: false}) table: MatTable<DataTableItem>;
   //  dataSource: DataTableDataSource;
 dataSource: any;
+ip: string;
   EXAMPLE_DATA: DataTableItem[] = [];
   // dataSource = new MatTableDataSource(this.EXAMPLE_DATA);
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['name', 'designation', 'experience', 'vacancy', 'location', 'actions'];
+  displayedColumns = ['Companyname', 'Designation', 'Experienceinyears', 'Experienceinmonths', 'Vacancy', 'Location', 'actions'];
   constructor( private http: Http, public change: ChangeDetectorRef, public dialog: MatDialog) {
+    this.ip = ip.url;
     const headers = new Headers();
     headers.append('content-type', 'application/json');
-    this.http.post('http://192.168.0.192:4500/api/companydata',  { headers }).map(res => res.json()).subscribe(response => {
+    this.http.post(this.ip + '/api/companydata',  { headers }).map(res => res.json()).subscribe(response => {
       console.log(response);
       this.dataSource =  new MatTableDataSource<any>(response);
       console.log(this.dataSource);
@@ -56,15 +60,16 @@ dataSource: any;
 
 
    model(data): void {
-    const dialogRef = this.dialog.open(CompanymodelComponent, {
-      data: {
-        datakey: data
-      }
-    });
+     console.log(data);
+     const dialogRef = this.dialog.open(CompanymodelComponent, {
+       data: {
+         datakey: data
+       }
+     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+     dialogRef.afterClosed().subscribe(result => {
+       console.log('The dialog was closed');
+     });
   }
 
   ngOnInit() {

@@ -9,20 +9,22 @@ import { Http, Headers } from '@angular/http';
 // import { MatDialogConfig } from '@angular/material';
 import 'rxjs/add/operator/map';
 import { CompanyskillsService } from '../companyskills.service';
+import {ip} from '../../config/url';
+import { CandidatemodelComponent } from '../candidatemodel/candidatemodel.component';
 
 
 
 
 
 export interface CandidateTableItem {
-  name: string;
-  currentdesignation: string;
-  experience: number;
-  email: string;
-  city: string;
-  phonenumber: number;
-  skillsknown: [];
-  skillsindemand: string;
+  Fullname: string;
+  Designation: string;
+  Expinyears: number;
+  City: string;
+  Expinmonths: number;
+  Mobilenumber: number;
+  // skillsknown: [];
+  // skillsindemand: string;
 }
 @Component({
   selector: 'app-candidate-table',
@@ -35,20 +37,22 @@ export class CandidateTableComponent implements OnInit {
   @ViewChild(MatTable, { static: false }) table: MatTable<DataTableItem>;
   //  dataSource: DataTableDataSource;
   skillArr = [];
+  ip: string;
 dataSource: any;
 EXAMPLE_DATA: CandidateTableItem[] = [];
 // dataSource = new MatTableDataSource(this.EXAMPLE_DATA);
 
 /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-displayedColumns = ['name', 'email', 'mobile', 'designation', 'experience', 'city', 'skills'];
+displayedColumns = ['Fullname', 'Mobilenumber', 'Designation', 'Expinyears', 'Expinmonths', 'City', 'actions'];
 constructor(private http: Http, public change: ChangeDetectorRef, public dialog: MatDialog, public companyservice: CompanyskillsService) {
+  this.ip = ip.url;
   this.skillArr = this.companyservice.getskills();
   const headers = new Headers();
   const serverdata = {
     skills: this.skillArr
   };
   headers.append('content-type', 'application/json');
-  this.http.post('http://192.168.0.192:4500/api/employeelist', serverdata, { headers }).map(res => res.json()).subscribe(response => {
+  this.http.post(this.ip + '/api/employeelist', serverdata, { headers }).map(res => res.json()).subscribe(response => {
     console.log(response);
     this.dataSource = new MatTableDataSource<any>(response);
     console.log(this.dataSource);
@@ -61,17 +65,17 @@ constructor(private http: Http, public change: ChangeDetectorRef, public dialog:
 }
 
 
-//  model(data): void {
-//   const dialogRef = this.dialog.open(CompanymodelComponent, {
-//     data: {
-//       datakey: data
-//     }
-//   });
+ model(data): void {
+  const dialogRef = this.dialog.open(CandidatemodelComponent, {
+    data: {
+      datakey: data
+    }
+  });
 
-//   dialogRef.afterClosed().subscribe(result => {
-//     console.log('The dialog was closed');
-//   });
-// }
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  });
+}
 
 ngOnInit() {
 

@@ -1,0 +1,93 @@
+<body>
+
+    <form #mycompanyForm="ngForm">
+      <div class="form-container">
+        <div class="row columns">
+  
+          <h3> Company requriment</h3>
+  
+          <div class="w3-row-padding">
+            <div class="w3-half">
+              <label>Name of the Jobseeker
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Fullname}} disabled>
+              </label>
+            </div>
+  
+            
+  
+            <div class="w3-half">
+              <label> Email ID
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Email}}  disabled>
+              </label>
+            </div>
+  
+            <div class="w3-half">
+              <label> Mhone Number
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Mobilenumber}} disabled>
+              </label>
+            </div>
+  
+  
+            <div class="w3-half">
+              <label>Current Designation
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Designation}} disabled>
+              </label>
+            </div>
+  
+  
+  
+           
+  
+            <div class="w3-half">
+              <label>Experience required in Years
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" placeholder="Years" value= {{Experienceinyears}} disabled>
+              </label>
+            </div>
+  
+            <div class="w3-half">
+              <label>Experience required in months
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" placeholder="Months" value= {{Experienceinmonths}} disabled>
+              </label>
+            </div>
+  
+            <div class="w3-half">
+              <label>Current Location
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Location}} disabled>
+              </label>
+            </div>
+            
+            <div class="w3-half">
+              <label>Expected CTC in lakhs 
+                <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Ctc}} disabled>
+              </label>
+            </div>
+  
+           
+  
+            <div class="w3-half">
+              <label>Skills looking for
+                  <tag-input [ngModel]="skills" name="skills"   [removable]='false' [disable]='true' > </tag-input>
+              </label>
+            </div>
+  
+            <div class="w3-half add-bottom-pading">
+                <mat-radio-group value={{Gender}} disabled>
+                    <mat-radio-button value="1">Male</mat-radio-button>
+                    <mat-radio-button value="2">Female</mat-radio-button>
+                    <mat-radio-button value="3">Others</mat-radio-button>
+                </mat-radio-group>
+        </div>
+  
+            <button class="btn btn-primary btn-block" (click)='ctable()' > Suggested Candidates </button>
+          </div>
+  
+  
+  
+  
+        </div>
+      </div>
+      
+  
+  
+    </form>
+  </body>

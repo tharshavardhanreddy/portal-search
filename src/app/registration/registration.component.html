@@ -8,18 +8,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title> Registration</title>
 </head>
-<!-- ngModel #username="ngModel"  required pattern="[a-zA-Z][a-zA-Z]+"
-ngModel #mailid="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-ngModel #phonenumber="ngModel" required pattern="[0-9]*" maxlength=10 minlength=10
-<div *ngIf="username?.touched">
-  <div *ngIf = "username?.errors.required">
-      <div *ngIf="phonenumber?.errors.pattern ||phonenumber?.errors.minlength || phonenumber?.errors.maxlength">
-          Invalid Mobile Number
-        </div> -->
+
 
 <body>
 
-        <form   #myForm="ngForm">
+        <form class="form"  #myForm="ngForm">
             <div class="container-fluid">
               <div class="row">
                 <div class="well center-block">
@@ -32,18 +25,21 @@ ngModel #phonenumber="ngModel" required pattern="[0-9]*" maxlength=10 minlength=
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="form-group">
                         <div class="input-group">
-                          <!-- <div class="input-group-addon">
-                          <i class="glyphicon glyphicon-user"></i>
-                          </div> -->
-                          <input type="text" placeholder=" Name" name="Name" style="width:200px" class="form-control"  ngModel #Name="ngModel"  required pattern="[a-zA-Z][a-zA-Z]+">
+                        
+                          <input type="text" placeholder=" Name" name="Name" style="width:200px" class="form-control"  ngModel #Name="ngModel" pattern="[a-zA-Z][a-zA-Z]+" required="required" />
                        
                         </div>
+                        <div class="alert" *ngIf="Name.invalid&& (Name.dirty||Name.touched)">
+                       <div *ngIf="Name.hasError('required')">
+                         Name is required
+                       </div>
+                       <div *ngIf="Name.hasError('pattern')">
+                          Invalid Name
+                        </div>
+                     </div>
+                     <!-- </div> -->
                       </div>
-                      <!-- <div  class="alert"  *ngIf="Name?.touched"> -->
-                          <!-- <div *ngIf = "Name?.errors.required">
-                            First name required
-                            </div> -->
-                            <!-- </div> -->
+                      
                     </div>
                   </div>
 
@@ -53,17 +49,21 @@ ngModel #phonenumber="ngModel" required pattern="[0-9]*" maxlength=10 minlength=
                     <div class="col-xs-12 col-sm-12 col-md-12">
                       <div class="form-group">
                         <div class="input-group">
-                          <!-- <div class="input-group-addon">
-                            <i class="glyphicon glyphicon-user"></i>
-                          </div>  -->
-                          <input type="text" placeholder="User Name" name="UserName" class="form-control"  ngModel #UserName="ngModel"  required pattern="[a-zA-Z][a-zA-Z]+">
+                         
+                          <input type="text" placeholder="User Name" class="form-control"  name="UserName"   ngModel #UserName="ngModel"  required pattern="[a-zA-Z][a-zA-Z]+">
                         </div>
-                      </div>
-                      <!-- <div class="alert" *ngIf="UserName?.touched">
-                          <div *ngIf = "UserName?.errors.required">
-                              Last Name required
+                        <div class="alert" *ngIf="UserName.invalid&& (UserName.dirty||UserName.touched)">
+                            <div *ngIf="UserName.hasError('required')">
+                              Name is required
+                            </div>
+                            <div *ngIf="UserName.hasError('pattern')">
+                               Invalid Name
+                             </div>
                           </div>
-                      </div> -->
+                       <!-- </div> -->
+                        
+                      </div>
+                   
                     </div>
                   </div>
           
@@ -71,11 +71,23 @@ ngModel #phonenumber="ngModel" required pattern="[0-9]*" maxlength=10 minlength=
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="form-group">
                         <div class="input-group">
-                          <!-- <div class="input-group-addon">
-                            <i class="glyphicon glyphicon-lock"></i>
-                          </div> -->
-                          <input type="password" minlength="6" maxlength="8" placeholder="Password" name="Password" class="form-control" ngModel #Password="ngModel" >
+                       
+                          <input type="password" minlength="6" maxlength="8" placeholder="Password" name="Password" class="form-control" ngModel #Password="ngModel" required>
                         </div>
+                          <div class="alert" *ngIf="Password.invalid&& (Password.dirty||Password.touched)">
+                              <div *ngIf="Password.hasError('required')">
+                                Name is required
+                              </div>
+                              <div *ngIf="Password.hasError('minlength')">
+                                 Minimum 6 charachters is required
+                               </div>
+                               <div *ngIf="Password.hasError('maxlength')">
+                                  password length must be 8 charachters
+                                </div>
+
+                            </div>
+                        
+                        <!-- </div> -->
                       </div>
                     </div>
                   </div>
@@ -84,15 +96,28 @@ ngModel #phonenumber="ngModel" required pattern="[0-9]*" maxlength=10 minlength=
                     <div class="col-md-12 col-xs-12 col-sm-12">
                       <div class="form-group">
                         <div class="input-group">
-                          <!-- <div class="input-group-addon">
-                            <i class="glyphicon glyphicon-phone"></i>
-                          </div> -->
-                          <input type="number" minlength="10" maxlength="10" class="form-control" name="phonenumber" placeholder="Mobile No." ngModel #phonenumber="ngModel" required pattern="[0-9]*">
+                       
+                          <input type="text" minlength="10" maxlength="10" class="form-control" name="phonenumber" placeholder="Mobile No." ngModel #phonenumber="ngModel" required pattern="[0-9]*">
                         </div>
+                          <div class="alert" *ngIf="phonenumber.invalid&& (phonenumber.dirty||phonenumber.touched)">
+                              <div *ngIf="phonenumber.hasError('required')">
+                                PhoneNumber is required
+                              </div>
+                              <div *ngIf="phonenumber.hasError('pattern')">
+                                 Invalid phonenumber
+                               </div>
+                               <div *ngIf="phonenumber.hasError('maxlength')">
+                                  PhoneNummber must be 10 numbers
+                                </div>
+                                <div *ngIf="phonenumber.hasError('minlength')">
+                                    PhoneNummber must be 10 numbers
+                                  </div>
+                            </div>
+                       
+                       
+                        <!-- </div> -->
                       </div>
-                      <!-- <div  class="alert alert-danger" *ngIf="phonenumber.errors.pattern ||phonenumber.errors.minlength || phonenumber.errors.maxlength">
-                          Invalid Mobile Number
-                      </div> -->
+                   
                     </div>
                   </div>
           
@@ -100,17 +125,20 @@ ngModel #phonenumber="ngModel" required pattern="[0-9]*" maxlength=10 minlength=
                     <div class="col-md-12 col-xs-12 col-sm-12">
                       <div class="form-group">
                         <div class="input-group">
-                          <!-- <div class="input-group-addon">
-                            <i class="glyphicon glyphicon-envelope"></i>
-                          </div> -->
+                        
                           <input type="email" class="form-control" name="mailid" placeholder="E-Mail" ngModel #mailid="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         </div>
+                          <div class="alert" *ngIf="mailid.invalid&& (mailid.dirty||mailid.touched)">
+                              <div *ngIf="mailid.hasError('required')">
+                                mailid is required
+                              </div>
+                              <div *ngIf="mailid.hasError('pattern')">
+                                 Invalid mailid
+                               </div>
+                            </div>
+                        <!-- </div> -->
                       </div>
-                      <!-- <div class="alert" *ngIf="mailid?.touched">
-                          <div *ngIf = "mailid?.errors.required">
-                              Mailid required
-                          </div>
-                    </div> -->
+                     
                   </div>
 
                   <div class="row widget">

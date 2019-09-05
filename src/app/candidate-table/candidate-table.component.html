@@ -7,59 +7,74 @@
       <div class="mat-elevation-z8">
         <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="dataSource">
           <!-- Id Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <ng-container matColumnDef="Fullname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>FullName</th>
           
-            <td mat-cell  *matCellDef="let row " >{{row.name}}</td>
+            <td mat-cell  *matCellDef="let row " >{{row.Fullname}}</td>
           
           </ng-container>
 
-          <ng-container matColumnDef="email">
+          <!-- <ng-container matColumnDef="email">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
           
             <td mat-cell  *matCellDef="let row " >{{row.email}}</td>
           
-          </ng-container>
+          </ng-container> -->
 
-          <ng-container matColumnDef="mobile">
+          <ng-container matColumnDef="Mobilenumber">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</th>
           
-            <td mat-cell  *matCellDef="let row " >{{row.phonenumber}}</td>
+            <td mat-cell  *matCellDef="let row " >{{row.Mobilenumber}}</td>
           
           </ng-container>
   
          
-          <ng-container matColumnDef="designation">
+          <ng-container matColumnDef="Designation">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Current Role</th>
          
-            <td mat-cell *matCellDef="let row">{{row.currentdesignation}}</td>
+            <td mat-cell *matCellDef="let row">{{row.Designation}}</td>
       
           </ng-container>
   
-          <ng-container matColumnDef="experience">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Experience</th>
+          <ng-container matColumnDef="Expinyears">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Exp in Years
+              </th>
            
-              <td mat-cell *matCellDef="let row">{{row.experience}}</td>
+              <td mat-cell *matCellDef="let row">{{row.Expinyears}}</td>
+        
+            </ng-container>
+
+            <ng-container matColumnDef="Expinmonths">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Exp in Months
+              </th>
+           
+              <td mat-cell *matCellDef="let row">{{row.Expinmonths}}</td>
         
             </ng-container>
   
-            <ng-container matColumnDef="city">
+            <ng-container matColumnDef="City">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Current location</th>
             
-              <td mat-cell *matCellDef="let row" >{{row.city}}</td>
+              <td mat-cell *matCellDef="let row" >{{row.City}}</td>
+           
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+         
+              <td mat-cell *matCellDef="let row">   <button mat-icon-button (click)="model(row)"> <mat-icon>description</mat-icon></button></td>
            
             </ng-container>
   
-            <ng-container matColumnDef="skills">
+            <!-- <ng-container matColumnDef="skills">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Skills</th>
-              <!-- <tag-input   [removable]='false' [disable]='true' [identifyBy]="'item_id'" [displayBy]="'item_text'" >{{row.skillsknown}} </tag-input> -->
              <td mat-cell *matCellDef="let row"> 
              <mat-chip-list>
                <mat-chip  *ngFor="let user of row.skillsknown">{{user.item_text}}</mat-chip>
 
              </mat-chip-list>
             </td>
-            </ng-container>
+            </ng-container> -->
 
 
 

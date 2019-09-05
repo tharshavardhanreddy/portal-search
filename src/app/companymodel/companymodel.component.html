@@ -9,26 +9,32 @@
         <div class="w3-row-padding">
           <div class="w3-half">
             <label>Name of the company
-              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{companyname}} disabled>
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Companyname}} disabled>
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>Name of the Authorized Person
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Authorisedname}} disabled>
             </label>
           </div>
 
           <div class="w3-half">
             <label>Authorized person Email
-              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{email}}  disabled>
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Email}}  disabled>
             </label>
           </div>
 
           <div class="w3-half">
             <label>Authorized Person Phone Number
-              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{mobilenumber}} disabled>
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Mobilenumber}} disabled>
             </label>
           </div>
 
 
           <div class="w3-half">
             <label>Required Designation
-              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{designation}} disabled>
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Designation}} disabled>
             </label>
           </div>
 
@@ -36,28 +42,46 @@
 
           <div class="w3-half">
             <label>Job Location
-              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{location}} disabled>
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Location}} disabled>
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>Experience required in Years
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" placeholder="Years" value= {{Experienceinyears}} disabled>
             </label>
           </div>
 
           <div class="w3-half">
             <label>Experience required in months
-              <input class="w3-input w3-animate-input" style="width:200px" type="text" placeholder="Months" value= {{experience}} disabled>
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" placeholder="Months" value= {{Experienceinmonths}} disabled>
+            </label>
+          </div>
+
+          <div class="w3-half">
+            <label>CTC 
+              <input class="w3-input w3-animate-input" style="width:200px" type="text" value= {{Ctc}} disabled>
             </label>
           </div>
 
           <div class="w3-half">
             <label>Number Of Vacancies
-              <input class="w3-input w3-animate-input" style="width:200px" type="number" placeholder="in number" value= {{vacancies}} disabled>
+              <input class="w3-input w3-animate-input" style="width:200px" type="number" placeholder="in number" value= {{Vacancy}} disabled>
             </label>
           </div>
 
           <div class="w3-half">
             <label>Skills looking for
                 <tag-input [ngModel]="skills" name="skills"   [removable]='false' [disable]='true' > </tag-input>
-              <!-- <input class="w3-input w3-animate-input" style="width:200px" type="number" placeholder="skills"  > -->
             </label>
           </div>
+
+          <div class="w3-half add-bottom-pading">
+          <mat-radio-group value= {{Position}} disabled>
+            <mat-radio-button value="1">For Contract</mat-radio-button>
+            <mat-radio-button value="2">For Permenant</mat-radio-button>
+        </mat-radio-group>
+      </div>
 
           <button class="btn btn-primary btn-block" (click)='ctable()' > Suggested Candidates </button>
         </div>

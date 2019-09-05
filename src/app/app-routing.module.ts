@@ -6,12 +6,13 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { CandidateTableComponent } from './candidate-table/candidate-table.component';
 
 
+
 const routes: Routes = [
   {path : '', component: LoginComponent},
   {path : 'login', component: LoginComponent},
   {path : 'register', component: RegistrationComponent},
   {path : 'data-table', component: DataTableComponent},
-  {path : 'candidate-table', component: CandidateTableComponent}
+  {path : 'candidate-table', component: CandidateTableComponent},
 ];
 
 @NgModule({

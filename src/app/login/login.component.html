@@ -8,94 +8,45 @@
 </head>
 
 <body>
-  <!-- <form #loginform="ngForm" (ngSubmit)="login (loginform)" id="body">
+  <div id="login">
 
-    <div class="login-wra">
-         <div class="login-html">
-          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-        <input id="tab-2" type="radio" name="tab" class="sign-up">
-        <label  class="tab">Sing Up</label>
-        <div class="login-form">
-          <div class="sign-in-htm">
-            <div class="group">
-              <label for="user" class="label">Phonenumber</label>
-              <input type="text" class="input" name="phonenumber" placeholder="Phonenumber" ngModel
-                #phonenumber  =  "ngModel">
-            </div>
-            <div class="group">
-              <label for="pass" class="label">Password</label>
-              <input type="password" class="input" name="password" placeholder="Password" ngModel #password = "ngModel">
-            </div>
+    <div class="container">
+      <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+            <form id="login-form" class="form" #login="ngForm">
+              <h3 class="text-center text-info">SGS RECRUITER LOGIN</h3>
+              <div class="form-group">
+                <label for="username" class="text-info1">USERNAME</label><br>
+                <input type="text" name="username" id="username" placeholder="username" class="form-control" ngModel
+                  #username='ngModel' pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+              </div>
 
-            <div class="group">
-              <input type="submit" class="button" value="Sign In">
-            </div>
-            <div class="hr"></div>
-            <div class="foot-lnk">
-              <label for="tab-2">Forgot Password ?</label>
-            </div>
+
+              <div class="form-group">
+                <label for="password" class="text-info2">PASSWORD</label><br>
+                <input type="password" name="password" id="password" placeholder="password" class="form-control" ngModel
+                  #password='ngModel'>
+              </div>
+              <div class="form-group">
+                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me"
+                      name="remember-me" type="checkbox"></span></label><br>
+                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit" tappble
+                  (click)="userlog (login)">
+              </div>
+              <div id="register-link" class="text-right">
+                <a routerLink='/register' class="text-info">Register here</a>
+              </div>
+            </form>
           </div>
-
-          <div class="sign-up-htm">
-            <div class="group">
-              <label for="pass" class="label">Email Address</label>
-              <input id="pass" type="text" class="input">
-            </div>
-            <div class="group">
-              <input type="submit" class="button" value="Reset Password">
-            </div>
-            <div class="hr"></div>
-            <div class="foot-lnk">
-              <label for="tab-1">Sign In</label>
-            </div>
-
-          </div>
-
         </div>
       </div>
     </div>
-
-  </form> -->
-
-  
-  
-      <div id="login">
-          
-          <div class="container">
-              <div id="login-row" class="row justify-content-center align-items-center">
-                  <div id="login-column" class="col-md-6">
-                      <div id="login-box" class="col-md-12">
-                          <form id="login-form" class="form" #login="ngForm">
-                              <h3 class="text-center text-info">LOGIN</h3>
-                              <div class="form-group">
-                                  <label for="username" class="text-info1">USERNAME</label><br>
-                                  <input type="text" name="username" id="username" placeholder="username" class="form-control" ngModel #username='ngModel' >
-                              </div>
-
-
-                              <div class="form-group">
-                                  <label for="password" class="text-info2">PASSWORD</label><br>
-                                  <input type="password" name="password" id="password" placeholder="password" class="form-control" ngModel #password = 'ngModel'>
-                              </div>
-                              <div class="form-group">
-                                  <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                  <input type="submit" name="submit"  class="btn btn-info btn-md" value="submit" tappble (click)="userlog (login)">
-                              </div>
-                              <div id="register-link" class="text-right">
-                                  <a routerLink='/register' class="text-info">Register here</a>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </body>
-  
+  </div>
+</body>
 
 
 
 
-</html> 
 
-
+</html>

@@ -10,13 +10,17 @@ import {Router} from '@angular/router';
 })
 export class CompanymodelComponent implements OnInit {
 
-  companyname: string = '';
-  email: string = '';
-  mobilenumber: number;
-  designation: string = '';
-  location: string = '';
-  experience: number;
-  vacancies: number;
+  Companyname: string = '';
+  Authorisedname: string = '';
+  Email: string = '';
+  Mobilenumber: number;
+  Experienceinyears: number;
+  Designation: string = '';
+  Location: string = '';
+  Experienceinmonths: number;
+  Position: string = '';
+  Ctc: number;
+  Vacancy: number;
   skills = [];
 
 
@@ -26,23 +30,26 @@ export class CompanymodelComponent implements OnInit {
   ngOnInit() {
     let looper = 0;
     console.log(this.data.datakey);
-    this.companyname = this.data.datakey.name;
-    this.email = this.data.datakey.email;
-    this.mobilenumber = this.data.datakey.phonenumber;
-    this.designation = this.data.datakey.designation;
-    this.location = this.data.datakey.location;
-    this.experience = this.data.datakey.experience;
-    this.vacancies = this.data.datakey.vacancy;
-    while (this.data.datakey.skills[looper]) {
-      this.skills.push(this.data.datakey.skills[looper].item_text);
-      console.log(this.skills);
-
+    this.Companyname = this.data.datakey.Companyname;
+    this.Authorisedname = this.data.datakey.Authorisedname;
+    this.Email = this.data.datakey.Email;
+    this.Mobilenumber = this.data.datakey.Mobilenumber;
+    this.Designation = this.data.datakey.Designation;
+    this.Location = this.data.datakey.Location;
+    this.Experienceinmonths = this.data.datakey.Experienceinmonths;
+    this.Experienceinyears = this.data.datakey.Experienceinyears;
+    this.Ctc = this.data.datakey.Ctc;
+    this.Position = this.data.datakey.Position;
+    this.Vacancy = this.data.datakey.Vacancy;
+    while (this.data.datakey.Skills[looper]) {
+      this.skills.push(this.data.datakey.Skills[looper]);
       looper++;
 
     }
   }
 
   ctable() {
+
     this.companyservice.setskills(this.skills);
     this.dialogRef.close();
     this.roter.navigate(['/candidate-table']);
