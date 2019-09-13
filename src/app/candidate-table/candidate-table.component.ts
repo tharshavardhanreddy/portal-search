@@ -23,6 +23,7 @@ export interface CandidateTableItem {
   City: string;
   Expinmonths: number;
   Mobilenumber: number;
+  Timestamp: string;
   // skillsknown: [];
   // skillsindemand: string;
 }
@@ -43,7 +44,7 @@ EXAMPLE_DATA: CandidateTableItem[] = [];
 // dataSource = new MatTableDataSource(this.EXAMPLE_DATA);
 
 /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-displayedColumns = ['Fullname', 'Mobilenumber', 'Designation', 'Expinyears', 'Expinmonths', 'City', 'actions'];
+displayedColumns = ['Fullname', 'Mobilenumber', 'Designation', 'Expinyears', 'Expinmonths', 'City', 'Timestamp', 'actions'];
 constructor(private http: Http, public change: ChangeDetectorRef, public dialog: MatDialog, public companyservice: CompanyskillsService) {
   this.ip = ip.url;
   this.skillArr = this.companyservice.getskills();

@@ -39,7 +39,7 @@ import { CompanymodelComponent } from './companymodel/companymodel.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CandidateTableComponent } from './candidate-table/candidate-table.component';
 import {CompanyskillsService} from './companyskills.service';
-import { CandidatemodelComponent } from './candidatemodel/candidatemodel.component';
+import { CandidatemodelComponent} from './candidatemodel/candidatemodel.component';
 
 
 

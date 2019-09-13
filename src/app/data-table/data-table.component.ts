@@ -14,6 +14,7 @@ import {ip} from '../../config/url';
 
 
 
+
 export interface DataTableItem {
   Companyname: string;
   Designation: string;
@@ -21,6 +22,7 @@ export interface DataTableItem {
   Experienceinmonths: number;
   Vacancy: number;
   Location: string;
+  Timestamp: string;
   // actions: any;
 }
 
@@ -41,7 +43,8 @@ ip: string;
   // dataSource = new MatTableDataSource(this.EXAMPLE_DATA);
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['Companyname', 'Designation', 'Experienceinyears', 'Experienceinmonths', 'Vacancy', 'Location', 'actions'];
+  // tslint:disable-next-line:max-line-length
+  displayedColumns = ['Companyname', 'Designation', 'Experienceinyears', 'Experienceinmonths', 'Vacancy', 'Location', 'Timestamp', 'actions'];
   constructor( private http: Http, public change: ChangeDetectorRef, public dialog: MatDialog) {
     this.ip = ip.url;
     const headers = new Headers();

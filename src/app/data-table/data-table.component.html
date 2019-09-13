@@ -1,3 +1,8 @@
+
+<body>
+<header>Company's Requirement Data-table</header>
+
+
 <div class="body">
   <div class="content">
 
@@ -49,6 +54,16 @@
             <td mat-cell *matCellDef="let row">{{row.Location}}</td>
          
           </ng-container>
+
+          <ng-container matColumnDef="Timestamp">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+           
+            <td mat-cell *matCellDef="let row">{{row.Timestamp}}</td>
+         
+          </ng-container>
+
+
+
           <ng-container matColumnDef="actions">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
          
@@ -72,4 +87,6 @@
   </div>
 </div>
 
+<footer><p>&#xA9; 2019 All rights reserved</p></footer>
+</body>
 <router-outlet></router-outlet>

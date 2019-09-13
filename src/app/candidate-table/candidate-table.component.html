@@ -1,3 +1,11 @@
+<body>
+  <header>
+    <h1>Jobseeker Data-table</h1>
+   <span class="p">There are the details of the jobseekers which are suitable for this company's profile</span>
+
+  </header>
+
+
 <div class="body">
     <div class="content">
   
@@ -59,6 +67,13 @@
            
             </ng-container>
 
+            <ng-container matColumnDef="Timestamp">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+            
+              <td mat-cell *matCellDef="let row" >{{row.Timestamp}}</td>
+           
+            </ng-container>
+
             <ng-container matColumnDef="actions">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
          
@@ -101,5 +116,8 @@
       </div>
     </div>
   </div>
-  
+  <footer> <p>&#xA9; 2019 All rights reserved</p>
+    </footer>
+
+</body>
   <router-outlet></router-outlet>
